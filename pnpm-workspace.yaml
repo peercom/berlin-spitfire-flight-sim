@@ -1,0 +1,8 @@
+allowBuilds:
+  wasm-pack: set this to true or false
+packages:
+  - .
+
+onlyBuiltDependencies:
+  - esbuild
+  - wasm-pack

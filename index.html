@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111b" />
+    <title>Spitfire · Berlin 100 km</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="cesium"></div>
+      <div id="boot" class="boot">
+        <div class="roundel"><i></i></div>
+        <p class="eyebrow">BERLIN · 100 KM SECTOR</p>
+        <h1>SPITFIRE IX</h1>
+        <p id="boot-status">Initialising WebAssembly flight dynamics…</p>
+        <button id="start" disabled>START FLIGHT</button>
+      </div>
+
+      <section id="hud" class="hud hidden" aria-label="Flight instruments">
+        <div class="instrument"><span>IAS</span><b id="speed">000</b><small>KM/H</small></div>
+        <div class="instrument"><span>ALT</span><b id="altitude">0000</b><small>M</small></div>
+        <div class="instrument heading"><span>HDG</span><b id="heading">000</b><small>°</small></div>
+        <div class="instrument"><span>THR</span><b id="throttle-readout">65</b><small>%</small></div>
+        <div class="instrument"><span>BERLIN</span><b id="radius">0.0</b><small>KM</small></div>
+      </section>
+
+      <div id="crosshair" class="crosshair hidden"><span></span><i></i></div>
+      <div id="warning" class="warning hidden">RETURN TO BERLIN SECTOR</div>
+      <div id="data-status" class="data-status hidden">Loading terrain…</div>
+
+      <section id="controls" class="controls hidden" aria-label="Flight controls">
+        <div class="control-help">
+          <strong>↑ · ↓</strong> nose down / up
+          <strong>← · →</strong> roll
+          <strong>W · S</strong> throttle
+          <strong>R</strong> reset
+        </div>
+        <div class="pad">
+          <button data-control="pitch-up" aria-label="Pitch up">↑</button>
+          <button data-control="roll-left" aria-label="Roll left">←</button>
+          <button data-control="pitch-down" aria-label="Pitch down">↓</button>
+          <button data-control="roll-right" aria-label="Roll right">→</button>
+        </div>
+        <label class="throttle">THROTTLE<input id="throttle" type="range" min="0" max="100" value="65" /></label>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

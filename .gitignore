@@ -1,0 +1,15 @@
+node_modules/
+dist/
+crates/flight-core/target/
+
+# Generated WebAssembly package metadata
+src/wasm/.wasm-pack/
+
+# The aircraft is a BlendKit Royalty Free asset. Its licence permits use in
+# software but not redistribution as an extractable model, so it is not
+# included in this public source repository.
+public/models/*.glb
+
+.DS_Store
+.env
+*.log

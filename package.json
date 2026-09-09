@@ -1,0 +1,21 @@
+{
+  "name": "berlin-spitfire-flight-sim",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "wasm": "wasm-pack build crates/flight-core --target web --out-dir ../../src/wasm --release",
+    "dev": "vite --host 127.0.0.1",
+    "build": "pnpm run wasm && tsc --noEmit && vite build",
+    "test:physics": "cargo test --manifest-path crates/flight-core/Cargo.toml"
+  },
+  "dependencies": {
+    "cesium": "1.145.0"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "vite": "8.2.2",
+    "vite-plugin-cesium": "1.2.23",
+    "wasm-pack": "0.15.0"
+  }
+}
